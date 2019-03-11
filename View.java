@@ -36,6 +36,8 @@ public class View extends JPanel {
 		setPics();
 	}
 
+	// MAIN 
+	// set up frame and initialize controller and start
 	public static void main(String[] args) {
 		//JFrame frame = new JFrame();
     	frame.getContentPane().add(new View()); //
@@ -78,6 +80,7 @@ public class View extends JPanel {
     	// TODO: Change this method so you can load other orc animation bitmaps (pictures)
     }
     
+    // loads orc pictures and frames into 2d array ready to be loaded
     private void setPics() {
     	String[] imgs = new String[8];
     	imgs[0] = "orc_forward_north.png";
@@ -101,6 +104,7 @@ public class View extends JPanel {
     	// TODO: Change this constructor so that at least eight orc animation pngs are loaded
     }  
 
+    // draws new image 
     @Override
     public void paint(Graphics g) { 
     	picNum = (picNum + 1) % frameCount;
@@ -110,7 +114,7 @@ public class View extends JPanel {
     	g.drawImage(cImg, x, y, Color.gray, this);
     }
     
-    
+    // updates the view given current image position and direction
 	public void update(int x, int y, int direct) {
 		//System.out.println("* " + this.x);
 		this.x = x;		

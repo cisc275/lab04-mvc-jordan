@@ -24,6 +24,7 @@ public class Model {
     final int xIncr = 8;
     final int yIncr = 2;
 
+    // constructor that begins the orc at direction 3 (Southeast)
 	public Model(int width, int height, int imageWidth, int imageHeight) {
 		this.width = width;
 		this.height = height;
@@ -32,6 +33,7 @@ public class Model {
 		direct = 3;
 	}
 
+	// changes the x and y depending on the current direction the orc is facing
 	public void updateLocationAndDirection() {
 		boolean rightOob = x >= width - imageWidth;
     	boolean leftOob = x <= 0;
